@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { Carousel } from "@material-tailwind/react";
 import AboutCard from "@/components/about-card";
 
@@ -38,7 +38,18 @@ export function AboutEvent() {
         designed to inspire, educate, and connect.
       </p>
 
-      <Carousel className="rounded-xl w-full max-w-4xl">
+      <Carousel
+      
+      className="rounded-xl w-full max-w-4xl"
+      placeholder="Loading..."
+      onPointerEnterCapture={() => console.log('Pointer entered')}
+      onPointerLeaveCapture={() => console.log('Pointer left')}
+      // Include other optional props as needed
+      autoplay
+      autoplayDelay={3000}
+      // transition="ease-in-out"
+      loop
+      slideRef={React.createRef()}>
         {carouselItems.map((item, index) => (
           <div key={index} className="relative w-full">
             <img
