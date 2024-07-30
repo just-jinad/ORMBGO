@@ -15,15 +15,15 @@ const carouselItems = [
     src: "https://static.wixstatic.com/media/e0c18a_e61ddc1381874e139b3b7a8e05306535~mv2.jpg/v1/fit/w_804,h_1567,q_90/e0c18a_e61ddc1381874e139b3b7a8e05306535~mv2.webp",
     alt: "Image 2",
     title: "The Beauty of Nature",
-    description: "It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit."
+    description: "It is not so much for its beauty that the forest makes a claim upon men&apos;s hearts, as for that subtle something, that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit."
   },
   {
     src: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
     alt: "Image 3",
     title: "The Beauty of Nature",
-    description: "It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit."
+    description: "It is not so much for its beauty that the forest makes a claim upon men&apos;s hearts, as for that subtle something, that quality of air that emanation from old trees, that so wonderfully changes and renews a weary spirit."
   },
-  
+  // Add more images here
 ];
 
 export function AboutEvent() {
@@ -52,7 +52,7 @@ export function AboutEvent() {
               src={item.src}
               alt={item.alt}
               className="w-full object-cover"
-              style={{ height: '60vh' }} // Adjust the height as needed
+              style={{ height: "60vh" }} // Adjust the height as needed
             />
             <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
               <div className="w-3/4 md:w-2/4 text-center p-4">
