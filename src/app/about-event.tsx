@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography, Carousel, Button } from "@material-tailwind/react";
+import { Carousel } from "@material-tailwind/react";
 import AboutCard from "@/components/about-card";
 
 // Array of image data
@@ -29,21 +29,14 @@ const carouselItems = [
 export function AboutEvent() {
   return (
     <section className="container mx-auto flex flex-col items-center px-4 py-10">
-      <Typography variant="h6" className="text-center mb-2" color="orange">
-        MAKING LIFE WORTH LIVING
-      </Typography>
-      <Typography variant="h3" className="text-center" color="blue-gray">
-        Why Attend?
-      </Typography>
-      <Typography
-        variant="lead"
-        className="mt-2 lg:max-w-4xl mb-8 w-full text-center font-normal !text-gray-500"
-      >
+      <h6 className="text-center mb-2 text-orange-600">MAKING LIFE WORTH LIVING</h6>
+      <h3 className="text-center text-blue-gray-900">Why Attend?</h3>
+      <p className="mt-2 lg:max-w-4xl mb-8 w-full text-center font-normal text-gray-500">
         Welcome to the AI Conference 2023, where the future unfolds! Whether
         you&apos;re a seasoned AI professional, a curious newcomer, or a
         business leader looking to harness the power of AI, this conference is
         designed to inspire, educate, and connect.
-      </Typography>
+      </p>
 
       <Carousel className="rounded-xl w-full max-w-4xl">
         {carouselItems.map((item, index) => (
@@ -56,27 +49,19 @@ export function AboutEvent() {
             />
             <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
               <div className="w-3/4 md:w-2/4 text-center p-4">
-                <Typography
-                  variant="h1"
-                  color="white"
-                  className="mb-4 text-2xl md:text-3xl lg:text-4xl"
-                >
+                <h1 className="mb-4 text-2xl md:text-3xl lg:text-4xl text-white">
                   {item.title}
-                </Typography>
-                <Typography
-                  variant="lead"
-                  color="white"
-                  className="mb-12 opacity-80"
-                >
+                </h1>
+                <p className="mb-12 text-white opacity-80">
                   {item.description}
-                </Typography>
+                </p>
                 <div className="flex justify-center gap-2">
-                  <Button size="lg" color="white">
+                  <button className="px-6 py-2 bg-white text-black rounded-lg text-lg">
                     Explore
-                  </Button>
-                  <Button size="lg" color="white" variant="text">
+                  </button>
+                  <button className="px-6 py-2 bg-transparent text-white border border-white rounded-lg text-lg">
                     Gallery
-                  </Button>
+                  </button>
                 </div>
               </div>
             </div>
