@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { Carousel } from "@material-tailwind/react";
+// import { Carousel } from "@material-tailwind/react";
+import { Carousel } from "../components/material-tailwind";
 import AboutCard from "@/components/about-card";
 
 // Array of image data
