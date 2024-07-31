@@ -5,12 +5,22 @@ interface LayoutProps {
   children: ReactNode;
 }
 
+const isValidReactNode = (node: ReactNode): boolean => {
+  return (
+    typeof node === 'string' ||
+    typeof node === 'number' ||
+    typeof node === 'boolean' ||
+    React.isValidElement(node) ||
+    (Array.isArray(node) && node.every(isValidReactNode))
+  );
+};
+
 export function Layout({ children }: LayoutProps) {
-  if (typeof children !== 'string' && typeof children !== 'number' && typeof children !== 'boolean' && typeof children !== 'bigint' && React.isValidElement(children) || (Array.isArray(children) && children.every(child => React.isValidElement(child)))) {
-    return <ThemeProvider>{children}</ThemeProvider>;
-  } else {
-    return <ThemeProvider>{null}</ThemeProvider>;
-  }
+  return (
+    <ThemeProvider>
+      {isValidReactNode(children) ? children : null}
+    </ThemeProvider>
+  );
 }
 
 export default Layout;
