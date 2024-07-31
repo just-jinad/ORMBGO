@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Layout, FixedPlugin  } from "@/components"; // Importing Layout as a named export
 // import from "@/components/FixedPlugin"; // Assuming FixedPlugin is default export
+import { ThemeProvider } from "../components/material-tailwind";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -12,9 +13,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "NextJS",
+  title: "NextJS Tailwind Event Landing Page",
   description:
-    "Intro",
+    "Introducing Tailwind Event Landing Page, a dynamic and visually appealing landing page template designed using Tailwind CSS and Material Tailwind.",
 };
 
 export default function RootLayout({
