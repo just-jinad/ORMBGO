@@ -45,7 +45,7 @@ export function AboutEvent() {
         onPointerLeaveCapture={() => console.log('Pointer left')}
         autoplay={true}
         autoplayDelay={3000}
-        loop={true}
+    
       >
         {carouselItems.map((item, index) => (
           <div key={index} className="relative w-full">
