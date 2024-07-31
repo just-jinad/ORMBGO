@@ -72,29 +72,41 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 z-50 w-full ${
-        isScrolling ? "bg-white" : "bg-transparent"
-      }`}
+        isScrolling ? "bg-white shadow-lg" : "bg-transparent"
+      } transition-colors duration-300`}
     >
       <div className="container mx-auto flex items-center justify-between p-4">
         <h1
-          className={`text-lg font-bold ${isScrolling ? "text-green-800" : "text-white"}`}
+          className={`text-lg font-bold ${
+            isScrolling ? "text-green-800" : "text-white"
+          }`}
         >
           ORMBGO
         </h1>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <button className={`text-sm font-medium ${isScrolling ? "text-gray-800" : "text-white"} hover:text-gray-600`}>
+          <button
+            className={`text-sm font-medium ${
+              isScrolling ? "text-gray-800" : "text-white"
+            } hover:text-gray-600`}
+          >
             Contact Us
           </button>
           <a href="https://www.material-tailwind.com/blocks" target="_blank">
-            <button className={`text-sm font-medium ${isScrolling ? "text-gray-800" : "text-white"} hover:text-gray-600`}>
+            <button
+              className={`text-sm font-medium ${
+                isScrolling ? "text-gray-800" : "text-white"
+              } hover:text-gray-600`}
+            >
               Give 💖
             </button>
           </a>
         </div>
         <button
           onClick={handleOpen}
-          className={`ml-auto inline-block lg:hidden text-${isScrolling ? "gray-800" : "white"}`}
+          className={`ml-auto inline-block lg:hidden ${
+            isScrolling ? "text-gray-800" : "text-white"
+          }`}
         >
           {open ? (
             <XMarkIcon strokeWidth={2} className="h-6 w-6" />
@@ -104,8 +116,8 @@ export function Navbar() {
         </button>
       </div>
       {open && (
-        <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5">
-          <div className="mt-6 flex items-center gap-4">
+        <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5 lg:hidden">
+          <div className="flex flex-col items-center gap-4">
             <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
               Contact Us
             </button>
@@ -114,6 +126,14 @@ export function Navbar() {
                 Give 💖
               </button>
             </a>
+            <ul className="mt-4 flex flex-col items-center gap-4">
+              {NAV_MENU.map((item, index) => (
+                <NavItem key={index} href={item.href}>
+                  <item.icon className="h-6 w-6" />
+                  {item.name}
+                </NavItem>
+              ))}
+            </ul>
           </div>
         </div>
       )}
