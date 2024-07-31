@@ -71,9 +71,9 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full ${
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
         isScrolling ? "bg-white shadow-lg" : "bg-transparent"
-      } transition-colors duration-300`}
+      }`}
     >
       <div className="container mx-auto flex items-center justify-between p-4">
         <h1
