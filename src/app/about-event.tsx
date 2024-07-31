@@ -39,17 +39,14 @@ export function AboutEvent() {
       </p>
 
       <Carousel
-      
-      className="rounded-xl w-full max-w-4xl"
-      placeholder="Loading..."
-      onPointerEnterCapture={() => console.log('Pointer entered')}
-      onPointerLeaveCapture={() => console.log('Pointer left')}
-      // Include other optional props as needed
-      autoplay
-      autoplayDelay={3000}
-      // transition="ease-in-out"
-      loop
-      slideRef={React.createRef()}>
+        className="rounded-xl w-full max-w-4xl"
+        placeholder="Loading..."
+        onPointerEnterCapture={() => console.log('Pointer entered')}
+        onPointerLeaveCapture={() => console.log('Pointer left')}
+        autoplay={true}
+        autoplayDelay={3000}
+        loop={true}
+      >
         {carouselItems.map((item, index) => (
           <div key={index} className="relative w-full">
             <img
