@@ -1,26 +1,10 @@
-import React, { ReactNode } from 'react';
-import { ThemeProvider } from '@material-tailwind/react';
+"use client";
 
-interface LayoutProps {
-  children: ReactNode;
-}
+import React from "react";
+import { ThemeProvider } from "@material-tailwind/react";
 
-const isValidReactNode = (node: ReactNode): boolean => {
-  return (
-    typeof node === 'string' ||
-    typeof node === 'number' ||
-    typeof node === 'boolean' ||
-    React.isValidElement(node) ||
-    (Array.isArray(node) && node.every(isValidReactNode))
-  );
-};
-
-export function Layout({ children }: LayoutProps) {
-  return (
-    <ThemeProvider>
-      {isValidReactNode(children) ? children : null}
-    </ThemeProvider>
-  );
+export function Layout({ children }: { children: React.ReactNode }) {
+  return <ThemeProvider>{children}</ThemeProvider>;
 }
 
 export default Layout;
