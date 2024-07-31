@@ -1,8 +1,9 @@
+import React, { ReactElement } from "react"; // Importing React and ReactElement
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { Layout } from "@/components";  // Importing Layout as a named export
-import { FixedPlugin } from "@/components"; // Assuming FixedPlugin is default export
+import { Layout, FixedPlugin  } from "@/components"; // Importing Layout as a named export
+// import from "@/components/FixedPlugin"; // Assuming FixedPlugin is default export
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactElement; // Changing to ReactElement
 }) {
   return (
     <html lang="en">
