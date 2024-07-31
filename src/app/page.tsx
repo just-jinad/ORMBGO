@@ -15,7 +15,8 @@ export default function Portfolio() {
       <Navbar />
       <Hero />
       <SponsoredBy />
-   
+      <AboutEvent />
+      
       <Faq />
       <Footer />
     </>
