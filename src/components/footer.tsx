@@ -22,7 +22,7 @@ export function Footer() {
           <a
             href="https://www.material-tailwind.com"
             target="_blank"
-            className="text-gray-900 text-xl font-semibold"
+            className="text-green-800 text-xl font-semibold"
           >
             ORMBGO 
           </a>

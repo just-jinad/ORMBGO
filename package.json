@@ -1,10 +1,10 @@
 {
-  "name": "nextjs-tailwind-event-landing-page",
+  "name": "ormbgo-event-landing-page",
   "version": "1.0.0",
   "private": true,
-  "author": "Creative Tim",
-  "license": "See license in https://www.creative-tim.com/license",
-  "homepage": "https://demos.creative-tim.com/nextjs-tailwind-event-landing-page",
+  "author": "One Root Many Branches Global Outreach",
+  "license": "MIT",
+  "homepage": "https://ormbgo.vercel.app/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
