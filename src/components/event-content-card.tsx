@@ -3,8 +3,7 @@ import Image from "next/image";
 interface EventContentCardProps {
   title: string;
   des: string;
-  name: string;
-  position: string;
+
   panel: string;
   img: string;
 }
@@ -12,8 +11,6 @@ interface EventContentCardProps {
 export function EventContentCard({
   title,
   des,
-  name,
-  position,
   panel,
   img,
 }: EventContentCardProps) {
@@ -38,21 +35,6 @@ export function EventContentCard({
         <p className="mb-6 lg:mb-12 text-gray-500 text-sm md:text-base lg:text-lg">
           {des}
         </p>
-        <div className="flex items-center gap-4">
-          <img
-            src="/logos/spotify-logo.png"
-            alt="spotify"
-            className="rounded-full w-10 h-10 md:w-12 md:h-12"
-          />
-          <div>
-            <h6 className="text-blue-gray-900 mb-0.5 text-sm md:text-base lg:text-lg">
-              {name}
-            </h6>
-            <p className="font-normal text-gray-500 text-xs md:text-sm lg:text-base">
-              {position}
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

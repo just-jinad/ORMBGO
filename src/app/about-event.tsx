@@ -43,7 +43,7 @@ export function AboutEvent() {
       </p>
 
       <Swiper
-        className="rounded-xl w-full max-w-4xl"
+        className="rounded-xl w-full max-w-4xl "
         spaceBetween={30}
         autoplay={{ delay: 3000 }}
         pagination={{ clickable: true }}
@@ -82,6 +82,8 @@ export function AboutEvent() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      
     </section>
   );
 }
