@@ -5,28 +5,25 @@ import EventContentCard from "@/components/event-content-card";
 
 const EVENT_CONTENT = [
   {
-    title: "AI's Role in Shaping the Future",
-    des: "Discover how AI is revolutionizing industries, creating new possibilities, and addressing global challenges. Gain a deep understanding of the pivotal role AI plays in driving innovation, sustainability, and progress in our rapidly evolving world.",
-    name: "Marcell Glock",
-    position: "Chief Executive, Spotify",
-    panel: "Panel Discussion",
-    img: "/image/avatar1.jpg",
+    title: "Dancing with residents at a nursing home. 2019.",
+    des: "We bring joy, love and gifts to the residents of nursing homes and rehab facilities every week.",
+   
+    panel: "NURSING HOMES",
+    img: "https://static.wixstatic.com/media/e0c18a_d14d1a94618641ccad78e1a1031d2b6a~mv2.jpeg/v1/fill/w_438,h_329,q_90/e0c18a_d14d1a94618641ccad78e1a1031d2b6a~mv2.webp",
   },
   {
-    title: "Introduction to Machine Learning",
-    des: "Explore the basic principles, algorithms, and applications of Machine Learning. Through hands-on exercises and practical examples, you'll develop a solid understanding of how Machine Learning powers AI-driven solutions.",
-    name: "Marcell Glock",
-    position: "Chief Executive, Spotify",
-    panel: "Workshop",
-    img: "/image/avatar2.jpg",
+    title: "Visiting the elderly during 2020",
+    des: "We sponsor special events for the community several times per year to raise funds for our organization and bring people together",
+   
+    panel: "COMMUNITY EVENTS",
+    img: "https://static.wixstatic.com/media/e0c18a_8f8c1141527147e9bfacefc109e22471~mv2.jpeg/v1/fill/w_188,h_250,q_90/e0c18a_8f8c1141527147e9bfacefc109e22471~mv2.webp",
   },
   {
-    title: "AI in Healthcare: Revolutionizing Patient Care",
-    des: "This session is a must-attend for healthcare professionals, AI enthusiasts, and anyone interested in the intersection of technology and well-being. Join us as we discuss how AI is bringing about positive changes in healthcare.",
-    name: "Marcell Glock",
-    position: "Chief Executive, Spotify",
-    panel: "Workshop",
-    img: "/image/avatar3.jpg",
+    title: "Gifts and goodies for nursing home residents! 2017",
+    des: "We love to meet new people and spend time with old friends at our monthly birthday gatherings!",
+    
+    panel: "Monthly Birthday Gatherings",
+    img: "https://static.wixstatic.com/media/e0c18a_c43f1ec76fe84644b2de1b41b8c27258~mv2.jpeg/v1/fill/w_388,h_292,q_90/e0c18a_c43f1ec76fe84644b2de1b41b8c27258~mv2.webp",
   },
 ];
 
