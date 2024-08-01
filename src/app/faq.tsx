@@ -31,80 +31,133 @@ export function Faq() {
 
   return (
     <>
-   <section className="container mx-auto py-10">
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-    {/* <!-- Sponsor a Senior --> */}
-    <div className="flex flex-col items-center text-center p-4 border border-gray-200 rounded-md shadow-sm">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-        {/* <!-- Add your heart SVG icon code here --> */}
-      </svg>
-      <h3 className="font-bold text-xl mb-2">SPONSOR A SENIOR</h3>
-      <p className="text-gray-600 mb-4">You can make someone's day by purchasing a goodie bag filled with small items guaranteed to bring a smile! $10</p>
-      <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">CLICK HERE</button>
+      <section className="container mx-auto p-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {/* <!-- Sponsor a Senior --> */}
+
+          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-12 w-12 mb-4 text-green-600"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {/* <!-- Add your heart SVG icon code here --> */}
+            </svg>
+            <h3 className="font-bold text-xl mb-2">SPONSOR A SENIOR</h3>
+            <p className="text-gray-600 mb-4">
+              You can make someone's day by purchasing a goodie bag filled with
+              small items guaranteed to bring a smile! $10
+            </p>
+            <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">
+              CLICK HERE
+            </button>
+          </div>
+          {/* <!-- Sponsor an Event --> */}
+          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-12 w-12 mb-4 text-green-600"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {/* <!-- Add your calendar check SVG icon code here --> */}
+            </svg>
+            <h3 className="font-bold text-xl mb-2">SPONSOR AN EVENT</h3>
+            <p className="text-gray-600 mb-4">
+              Be an event sponsor and help us bring people together!
+            </p>
+            <button className="px-4 py-2 border mt-12  border-gray-300 rounded-md text-black hover:bg-gray-100">
+              CLICK HERE
+            </button>
+          </div>
+          {/* <!-- Donate --> */}
+          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-12 w-12 mb-4 text-green-600"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {/* <!-- Add your piggy bank SVG icon code here --> */}
+            </svg>
+            <h3 className="font-bold text-xl mb-2">DONATE</h3>
+            <p className="text-gray-600 mb-4">
+              Your tax-deductible donations help us to keep growing and are very
+              gratefully received.
+            </p>
+            <button className="px-4 py-2 mt-6 border border-gray-300 rounded-md text-black hover:bg-gray-100">
+              DONATE
+            </button>
+          </div>
+          {/* <!-- Volunteer --> */}
+          <div className="flex flex-col items-center text-center p-4 rounded-md shadow-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-12 w-12 mb-4 text-green-600"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {/* <!-- Add your hand SVG icon code here --> */}
+            </svg>
+            <h3 className="font-bold text-xl mb-2">VOLUNTEER</h3>
+            <p className="text-gray-600 mb-4">
+              People need your smile, your talents, and your love!
+            </p>
+            <button className="px-4 py-2 mt-12 border border-gray-300 rounded-md text-black hover:bg-gray-100">
+              JOIN US!
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-8 px-8 lg:py-20">
+  <div className="container mx-auto">
+    <div className="text-center">
+      <h1 className="text-3xl lg:text-4xl text-blue-gray-900 mb-4">
+        Be a Volunteer
+      </h1>
+      <p className="mx-auto mb-24 lg:w-3/5 text-gray-500">
+        You can also be part of us by volunteering and using your talent, gift and resources to bless lives
+      </p>
     </div>
-    {/* <!-- Sponsor an Event --> */}
-    <div className="flex flex-col items-center text-center p-4 border border-gray-200 rounded-md shadow-sm">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-        {/* <!-- Add your calendar check SVG icon code here --> */}
-      </svg>
-      <h3 className="font-bold text-xl mb-2">SPONSOR AN EVENT</h3>
-      <p className="text-gray-600 mb-4">Be an event sponsor and help us bring people together!</p>
-      <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">CLICK HERE</button>
-    </div>
-    {/* <!-- Donate --> */}
-    <div className="flex flex-col items-center text-center p-4 border border-gray-200 rounded-md shadow-sm">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-        {/* <!-- Add your piggy bank SVG icon code here --> */}
-      </svg>
-      <h3 className="font-bold text-xl mb-2">DONATE</h3>
-      <p className="text-gray-600 mb-4">Your tax-deductible donations help us to keep growing and are very gratefully received.</p>
-      <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">DONATE</button>
-    </div>
-    {/* <!-- Volunteer --> */}
-    <div className="flex flex-col items-center text-center p-4 border border-gray-200 rounded-md shadow-sm">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
-        {/* <!-- Add your hand SVG icon code here --> */}
-      </svg>
-      <h3 className="font-bold text-xl mb-2">VOLUNTEER</h3>
-      <p className="text-gray-600 mb-4">People need your smile, your talents, and your love!</p>
-      <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">JOIN US!</button>
+
+    <div className="mx-auto lg:max-w-screen-lg lg:px-20">
+      <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+          className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500"
+          type="text"
+          placeholder="First Name"
+        />
+        <input
+          className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500"
+          type="text"
+          placeholder="Last Name"
+        />
+        <input
+          className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500"
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500"
+          type="tel"
+          placeholder="Phone Number"
+        />
+        <textarea
+          className="border border-gray-300 p-2 rounded-md focus:ring-2 focus:ring-blue-500 md:col-span-2"
+          placeholder="Message"
+        ></textarea>
+        <button
+          className="md:col-span-2 bg-green-500 text-white px-4 py-2 rounded-md font-bold hover:bg-green-900 transition duration-300"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
     </div>
   </div>
 </section>
-
-
-    <section className="py-8 px-8 lg:py-20">
-      <div className="container mx-auto">
-        <div className="text-center">
-          <h1 className="text-3xl lg:text-4xl text-blue-gray-900 mb-4">
-            Frequently asked questions
-          </h1>
-          <p className="mx-auto mb-24 lg:w-3/5 text-gray-500">
-            Welcome to the AI Conference 2023 FAQ section. We&apos;re here to
-            address your most common queries and provide you with the
-            information you need to make the most of your conference experience.
-          </p>
-        </div>
-
-        <div className="mx-auto lg:max-w-screen-lg lg:px-20">
-          {FAQS.map(({ title, desc }, key) => (
-            <div key={key} className="mb-4">
-              <button
-                onClick={() => handleOpen(key)}
-                className="w-full text-left text-gray-900 font-medium py-2 border-b"
-              >
-                {title}
-              </button>
-              {open === key && (
-                <div className="mt-2">
-                  <p className="text-gray-500">{desc}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
 
     </>
   );

@@ -33,32 +33,7 @@ export function EventContent() {
   return (
     <section className="py-8 px-8 lg:py-20">
       <div className="w-full flex mb-8 flex-col items-center">
-        <div className="flex h-12 w-72 md:w-96 justify-around">
-          <button
-            onClick={() => setActiveTab("Day1")}
-            className={`font-medium py-2 px-4 ${
-              activeTab === "Day1" ? "text-blue-500 border-b-2 border-blue-500" : "text-gray-500"
-            }`}
-          >
-            Day 1
-          </button>
-          <button
-            onClick={() => setActiveTab("Day2")}
-            className={`font-medium py-2 px-4 ${
-              activeTab === "Day2" ? "text-blue-500 border-b-2 border-blue-500" : "text-gray-500"
-            }`}
-          >
-            Day 2
-          </button>
-          <button
-            onClick={() => setActiveTab("Day3")}
-            className={`font-medium py-2 px-4 ${
-              activeTab === "Day3" ? "text-blue-500 border-b-2 border-blue-500" : "text-gray-500"
-            }`}
-          >
-            Day 3
-          </button>
-        </div>
+        
       </div>
       <div className="mx-auto container">
         {EVENT_CONTENT.map((props, idx) => (

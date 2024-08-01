@@ -7,14 +7,14 @@ export function Footer() {
       <div className="container flex flex-col mx-auto">
         <div className="flex w-full py-10 mb-5 md:mb-20 flex-col justify-center items-center bg-gray-900 max-w-6xl mx-auto rounded-2xl p-5">
           <h2 className="text-2xl md:text-3xl text-center font-bold text-white">
-            Join now and get 30% OFF!
+            Daily Bible Verse
           </h2>
           <p className="md:w-7/12 text-center my-3 text-base text-white">
-            Don't miss out on this exclusive offer that will end soon.
+            Those whom I love I rebuke and discipline. So be earnest and repent.
           </p>
           <div className="flex w-full md:w-fit gap-3 mt-2 flex-col md:flex-row">
             <button className="bg-white text-gray-900 py-2 px-4 rounded-md">
-              Buy Ticket
+              Revelation 3:19
             </button>
           </div>
         </div>
@@ -24,19 +24,10 @@ export function Footer() {
             target="_blank"
             className="text-gray-900 text-xl font-semibold"
           >
-            Material Tailwind
+            ORMBGO 
           </a>
           <ul className="flex justify-center my-4 md:my-0 w-max mx-auto items-center gap-4">
-            {LINKS.map((link, index) => (
-              <li key={index}>
-                <a
-                  href="#"
-                  className="font-normal text-gray-700 hover:text-gray-900 transition-colors"
-                >
-                  {link}
-                </a>
-              </li>
-            ))}
+          PO Box 821 Boca Raton, <br /> FL 33429 561-668-3925
           </ul>
           <div className="flex w-fit justify-center gap-2">
             <a
@@ -70,23 +61,8 @@ export function Footer() {
           </div>
         </div>
         <p className="text-center mt-12 font-normal text-gray-700">
-          &copy; {CURRENT_YEAR} Made with{" "}
-          <a
-            href="https://www.material-tailwind.com"
-            target="_blank"
-            className="text-blue-500 hover:underline"
-          >
-            Material Tailwind
-          </a>{" "}
-          by{" "}
-          <a
-            href="https://www.creative-tim.com"
-            target="_blank"
-            className="text-blue-500 hover:underline"
-          >
-            Creative Tim
-          </a>
-          .
+          Copyright © 2024 ORMBGO (One Root Many Branches Global Outreach, Inc.)
+          | All Rights Reserved.
         </p>
       </div>
     </footer>
