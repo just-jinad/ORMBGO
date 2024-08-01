@@ -30,6 +30,49 @@ export function Faq() {
   const handleOpen = (value: number) => setOpen(open === value ? null : value);
 
   return (
+    <>
+   <section className="container mx-auto py-10">
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+    {/* <!-- Sponsor a Senior --> */}
+    <div className="flex flex-col items-center text-center p-4 border border-gray-200 rounded-md shadow-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+        {/* <!-- Add your heart SVG icon code here --> */}
+      </svg>
+      <h3 className="font-bold text-xl mb-2">SPONSOR A SENIOR</h3>
+      <p className="text-gray-600 mb-4">You can make someone's day by purchasing a goodie bag filled with small items guaranteed to bring a smile! $10</p>
+      <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">CLICK HERE</button>
+    </div>
+    {/* <!-- Sponsor an Event --> */}
+    <div className="flex flex-col items-center text-center p-4 border border-gray-200 rounded-md shadow-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+        {/* <!-- Add your calendar check SVG icon code here --> */}
+      </svg>
+      <h3 className="font-bold text-xl mb-2">SPONSOR AN EVENT</h3>
+      <p className="text-gray-600 mb-4">Be an event sponsor and help us bring people together!</p>
+      <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">CLICK HERE</button>
+    </div>
+    {/* <!-- Donate --> */}
+    <div className="flex flex-col items-center text-center p-4 border border-gray-200 rounded-md shadow-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+        {/* <!-- Add your piggy bank SVG icon code here --> */}
+      </svg>
+      <h3 className="font-bold text-xl mb-2">DONATE</h3>
+      <p className="text-gray-600 mb-4">Your tax-deductible donations help us to keep growing and are very gratefully received.</p>
+      <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">DONATE</button>
+    </div>
+    {/* <!-- Volunteer --> */}
+    <div className="flex flex-col items-center text-center p-4 border border-gray-200 rounded-md shadow-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+        {/* <!-- Add your hand SVG icon code here --> */}
+      </svg>
+      <h3 className="font-bold text-xl mb-2">VOLUNTEER</h3>
+      <p className="text-gray-600 mb-4">People need your smile, your talents, and your love!</p>
+      <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">JOIN US!</button>
+    </div>
+  </div>
+</section>
+
+
     <section className="py-8 px-8 lg:py-20">
       <div className="container mx-auto">
         <div className="text-center">
@@ -62,6 +105,8 @@ export function Faq() {
         </div>
       </div>
     </section>
+
+    </>
   );
 }
 
