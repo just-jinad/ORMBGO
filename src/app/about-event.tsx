@@ -1,7 +1,10 @@
 "use client";
 import React from "react";
-// import { Carousel } from "@material-tailwind/react";
-import { Carousel } from "../components/material-tailwind";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'; // Correct import for modules
 import AboutCard from "@/components/about-card";
 
 // Array of image data
@@ -39,44 +42,46 @@ export function AboutEvent() {
         designed to inspire, educate, and connect.
       </p>
 
-      <Carousel
+      <Swiper
         className="rounded-xl w-full max-w-4xl"
-        placeholder="Loading..."
-        onPointerEnterCapture={() => console.log('Pointer entered')}
-        onPointerLeaveCapture={() => console.log('Pointer left')}
-        autoplay={true}
-        autoplayDelay={3000}
-    
+        spaceBetween={30}
+        autoplay={{ delay: 3000 }}
+        pagination={{ clickable: true }}
+        navigation
+        loop
+        modules={[Autoplay, Pagination, Navigation]} // Ensure modules are added here
       >
         {carouselItems.map((item, index) => (
-          <div key={index} className="relative w-full">
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="w-full object-cover"
-              style={{ height: "60vh" }} // Adjust the height as needed
-            />
-            <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
-              <div className="w-3/4 md:w-2/4 text-center p-4">
-                <h1 className="mb-4 text-2xl md:text-3xl lg:text-4xl text-white">
-                  {item.title}
-                </h1>
-                <p className="mb-12 text-white opacity-80">
-                  {item.description}
-                </p>
-                <div className="flex justify-center gap-2">
-                  <button className="px-6 py-2 bg-white text-black rounded-lg text-lg">
-                    Explore
-                  </button>
-                  <button className="px-6 py-2 bg-transparent text-white border border-white rounded-lg text-lg">
-                    Gallery
-                  </button>
+          <SwiperSlide key={index}>
+            <div className="relative w-full">
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="w-full object-cover"
+                style={{ height: "60vh" }} // Adjust the height as needed
+              />
+              <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
+                <div className="w-3/4 md:w-2/4 text-center p-4">
+                  <h1 className="mb-4 text-2xl md:text-3xl lg:text-4xl text-white">
+                    {item.title}
+                  </h1>
+                  <p className="mb-12 text-white opacity-80">
+                    {item.description}
+                  </p>
+                  <div className="flex justify-center gap-2">
+                    <button className="px-6 py-2 bg-white text-black rounded-lg text-lg">
+                      Explore
+                    </button>
+                    <button className="px-6 py-2 bg-transparent text-white border border-white rounded-lg text-lg">
+                      Gallery
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </Carousel>
+      </Swiper>
     </section>
   );
 }
