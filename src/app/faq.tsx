@@ -35,7 +35,7 @@ export function Faq() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* <!-- Sponsor a Senior --> */}
 
-          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg">
+          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg" data-aos="fade-up" data-aos-duration="1000">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-12 w-12 mb-4 text-green-600"
@@ -54,7 +54,7 @@ export function Faq() {
             </button>
           </div>
           {/* <!-- Sponsor an Event --> */}
-          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg">
+          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg" data-aos="fade-up" data-aos-duration="1000">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-12 w-12 mb-4 text-green-600"
@@ -72,7 +72,7 @@ export function Faq() {
             </button>
           </div>
           {/* <!-- Donate --> */}
-          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg">
+          <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg" data-aos="fade-up" data-aos-duration="1000">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-12 w-12 mb-4 text-green-600"
@@ -91,7 +91,7 @@ export function Faq() {
             </button>
           </div>
           {/* <!-- Volunteer --> */}
-          <div className="flex flex-col items-center text-center p-4 rounded-md shadow-lg">
+          <div className="flex flex-col items-center text-center p-4 rounded-md shadow-lg" data-aos="fade-up" data-aos-duration="1000">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-12 w-12 mb-4 text-green-600"

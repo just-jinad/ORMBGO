@@ -2,9 +2,9 @@ import React, { ReactElement } from "react"; // Importing React and ReactElement
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { Layout, FixedPlugin  } from "@/components"; // Importing Layout as a named export
-// import from "@/components/FixedPlugin"; // Assuming FixedPlugin is default export
+import { Layout, FixedPlugin } from "@/components"; // Importing Layout as a named export
 import { ThemeProvider } from "../components/material-tailwind";
+import AOSWrapper from '../components/AOSWrapper'; // Import the AOSWrapper
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -13,9 +13,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "NextJS Tailwind Event Landing Page",
-  description:
-    "Introducing Tailwind Event Landing Page, a dynamic and visually appealing landing page template designed using Tailwind CSS and Material Tailwind.",
+  title: "Ormbgo",
+  description: "one branch many roots org",
 };
 
 export default function RootLayout({
@@ -34,12 +33,14 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
       </head>
       <body className={roboto.className}>
-        <Layout>
-          <>
-            {children}
-            <FixedPlugin />
-          </>
-        </Layout>
+        <AOSWrapper> {/* Wrapping with AOSWrapper */}
+          <Layout>
+            <>
+              {children}
+              <FixedPlugin />
+            </>
+          </Layout>
+        </AOSWrapper>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
