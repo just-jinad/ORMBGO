@@ -41,7 +41,7 @@ export function SponsoredBy() {
               Senior Citizens as well as the community at large. We have
               developed highly energetic and
               <br />
-              <button className="mt-2 w-80 font-bold text-xl bg-green-500 hover:bg-pink-900 hover:text-white border hover:border-gray-300 text-white shadow-lg px-4 py-2 rounded-lg">
+              <button className="mt-2 w-full font-bold text-xl bg-green-500 hover:bg-pink-900 hover:text-white border hover:border-gray-300 text-white shadow-lg px-4 py-2 rounded-lg">
                 Give 
               </button>
             </p>
