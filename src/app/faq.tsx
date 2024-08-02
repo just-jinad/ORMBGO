@@ -1,6 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
+import { CiHeart } from "react-icons/ci";
+import { MdEventAvailable } from "react-icons/md";
+import { GiPiggyBank } from "react-icons/gi";
+import { FaHandPaper } from "react-icons/fa";
+
 
 const FAQS = [
   {
@@ -36,75 +42,49 @@ export function Faq() {
           {/* <!-- Sponsor a Senior --> */}
 
           <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg" data-aos="fade-up" data-aos-duration="1000">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 mb-4 text-green-600"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {/* <!-- Add your heart SVG icon code here --> */}
-            </svg>
+            
+            <CiHeart className="text-green-700 w-40 h-20 mb-3" />
+            {/* <a href="https://www.flaticon.com/free-icons/dating" title="dating icons">Dating icons created by hqrloveq - Flaticon</a> */}
             <h3 className="font-bold text-xl mb-2">SPONSOR A SENIOR</h3>
             <p className="text-gray-600 mb-4">
               You can make someone's day by purchasing a goodie bag filled with
               small items guaranteed to bring a smile! $10
             </p>
-            <button className="px-4 py-2 border border-gray-300 rounded-md text-black hover:bg-gray-100">
+            <button className="px-4 py-2 border border-gray-300 rounded-md text-green-500 font-bold hover:bg-green-700 hover:text-white">
               CLICK HERE
             </button>
           </div>
           {/* <!-- Sponsor an Event --> */}
           <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg" data-aos="fade-up" data-aos-duration="1000">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 mb-4 text-green-600"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {/* <!-- Add your calendar check SVG icon code here --> */}
-            </svg>
+          <MdEventAvailable className="text-green-700 w-40 h-20 mb-3"/>
             <h3 className="font-bold text-xl mb-2">SPONSOR AN EVENT</h3>
             <p className="text-gray-600 mb-4">
               Be an event sponsor and help us bring people together!
             </p>
-            <button className="px-4 py-2 border mt-12  border-gray-300 rounded-md text-black hover:bg-gray-100">
+            <button className="px-4 py-2 border mt-12  border-gray-300 rounded-md text-green-500 font-bold hover:bg-green-700 hover:text-white">
               CLICK HERE
             </button>
           </div>
           {/* <!-- Donate --> */}
           <div className="flex flex-col items-center text-center p-4  rounded-md shadow-lg" data-aos="fade-up" data-aos-duration="1000">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 mb-4 text-green-600"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {/* <!-- Add your piggy bank SVG icon code here --> */}
-            </svg>
+          <GiPiggyBank className="text-green-700 w-40 h-20 mb-3"/>
             <h3 className="font-bold text-xl mb-2">DONATE</h3>
             <p className="text-gray-600 mb-4">
               Your tax-deductible donations help us to keep growing and are very
               gratefully received.
             </p>
-            <button className="px-4 py-2 mt-6 border border-gray-300 rounded-md text-black hover:bg-gray-100">
+            <button className="px-4 py-2 mt-6 border border-gray-300 rounded-md  text-green-500 font-bold hover:bg-green-700 hover:text-white">
               DONATE
             </button>
           </div>
           {/* <!-- Volunteer --> */}
           <div className="flex flex-col items-center text-center p-4 rounded-md shadow-lg" data-aos="fade-up" data-aos-duration="1000">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12 mb-4 text-green-600"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {/* <!-- Add your hand SVG icon code here --> */}
-            </svg>
+          <FaHandPaper className="text-green-700 w-40 h-20 mb-3"/>
             <h3 className="font-bold text-xl mb-2">VOLUNTEER</h3>
             <p className="text-gray-600 mb-4">
               People need your smile, your talents, and your love!
             </p>
-            <button className="px-4 py-2 mt-12 border border-gray-300 rounded-md text-black hover:bg-gray-100">
+            <button className="px-4 py-2 mt-12 border border-gray-400 rounded-md text-green-500 font-bold hover:bg-green-700 hover:text-white">
               JOIN US!
             </button>
           </div>
