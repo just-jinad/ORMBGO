@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'; // Correct import for modules
-import AboutCard from "@/components/about-card";
+
 
 // Array of image data
 const carouselItems = [

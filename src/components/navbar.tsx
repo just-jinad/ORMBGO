@@ -26,21 +26,6 @@ function NavItem({ children, href }: NavItemProps) {
   );
 }
 
-const NAV_MENU = [
-  {
-    name: "Page",
-    icon: RectangleStackIcon,
-  },
-  {
-    name: "Account",
-    icon: UserCircleIcon,
-  },
-  {
-    name: "Docs",
-    icon: CommandLineIcon,
-    href: "https://www.material-tailwind.com/docs/react/installation",
-  },
-];
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
@@ -126,14 +111,7 @@ export function Navbar() {
                 Give 💖
               </button>
             </a>
-            <ul className="mt-4 flex flex-col items-center gap-4">
-              {NAV_MENU.map((item, index) => (
-                <NavItem key={index} href={item.href}>
-                  <item.icon className="h-6 w-6" />
-                  {item.name}
-                </NavItem>
-              ))}
-            </ul>
+         
           </div>
         </div>
       )}

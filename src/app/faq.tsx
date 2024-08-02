@@ -50,7 +50,7 @@ export function Faq() {
               You can make someone's day by purchasing a goodie bag filled with
               small items guaranteed to bring a smile! $10
             </p>
-            <button className="px-4 py-2 border border-gray-300 rounded-md text-green-500 font-bold hover:bg-green-700 hover:text-white">
+            <button className="px-4 py-2 border mb-3 border-gray-300 rounded-md text-green-500 font-bold hover:bg-green-700 hover:text-white">
               CLICK HERE
             </button>
           </div>
@@ -61,7 +61,7 @@ export function Faq() {
             <p className="text-gray-600 mb-4">
               Be an event sponsor and help us bring people together!
             </p>
-            <button className="px-4 py-2 border mt-12  border-gray-300 rounded-md text-green-500 font-bold hover:bg-green-700 hover:text-white">
+            <button className="px-4 py-2 border mt-12  border-gray-300 rounded-md text-green-500 font-bold hover:bg-green-700 mb-3 hover:text-white">
               CLICK HERE
             </button>
           </div>
@@ -73,7 +73,7 @@ export function Faq() {
               Your tax-deductible donations help us to keep growing and are very
               gratefully received.
             </p>
-            <button className="px-4 py-2 mt-6 border border-gray-300 rounded-md  text-green-500 font-bold hover:bg-green-700 hover:text-white">
+            <button className="px-4 py-2 mt-6 border border-gray-300 rounded-md  text-green-500 font-bold hover:bg-green-700 mb-3 hover:text-white">
               DONATE
             </button>
           </div>
@@ -84,7 +84,7 @@ export function Faq() {
             <p className="text-gray-600 mb-4">
               People need your smile, your talents, and your love!
             </p>
-            <button className="px-4 py-2 mt-12 border border-gray-400 rounded-md text-green-500 font-bold hover:bg-green-700 hover:text-white">
+            <button className="px-4 py-2 mt-12 border border-gray-400 rounded-md text-green-500 font-bold hover:bg-green-700 mb-3 hover:text-white">
               JOIN US!
             </button>
           </div>
