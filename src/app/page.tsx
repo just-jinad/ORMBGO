@@ -8,6 +8,7 @@ import AboutEvent from "./about-event";
 import OurStats from "./our-stats";
 import EventContent from "./event-content";
 import Faq from "./faq";
+import Contact from "./contact/contact";
 
 export default function Portfolio() {
   return (
@@ -20,6 +21,7 @@ export default function Portfolio() {
       <EventContent />
       <Faq />
       <Footer />
+    
     </>
   );
 }
