@@ -6,6 +6,7 @@ import {
   XMarkIcon,
   Bars3Icon,
 } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 interface NavItemProps {
   children: React.ReactNode;
@@ -66,10 +67,14 @@ export function Navbar() {
             isScrolling ? "text-green-800" : "text-white"
           }`}
         >
+          <Link href={"/"}>
           ORMBGO
+          
+          </Link>
         </h1>
 
         <div className="hidden items-center gap-4 lg:flex">
+          <Link href={"/contact"}>
           <button
             className={`text-sm font-medium ${
               isScrolling ? "text-gray-800" : "text-white"
@@ -77,7 +82,8 @@ export function Navbar() {
           >
             Contact Us
           </button>
-          <a href="https://www.material-tailwind.com/blocks" target="_blank">
+          </Link>
+          <a href="/" target="_blank">
             <button
               className={`text-sm font-medium ${
                 isScrolling ? "text-gray-800" : "text-white"
