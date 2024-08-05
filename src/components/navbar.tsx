@@ -83,7 +83,7 @@ export function Navbar() {
             Contact Us
           </button>
           </Link>
-          <a href="/" target="_blank">
+          
             <button
               className={`text-sm font-medium ${
                 isScrolling ? "text-gray-800" : "text-white"
@@ -94,7 +94,7 @@ export function Navbar() {
               Give 💖
               </Link>
             </button>
-          </a>
+      
         </div>
         <button
           onClick={handleOpen}

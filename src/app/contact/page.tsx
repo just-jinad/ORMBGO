@@ -36,7 +36,7 @@ const Contact = () => {
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                      className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
                     />
                   </div>
                   <div className="mb-4">
@@ -73,7 +73,7 @@ const Contact = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                    className="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-800"
                   >
                     Send Message
                   </button>
