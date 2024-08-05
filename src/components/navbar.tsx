@@ -89,7 +89,10 @@ export function Navbar() {
                 isScrolling ? "text-gray-800" : "text-white"
               } hover:text-green-600`}
             >
+              <Link href={"/"}>
+             
               Give 💖
+              </Link>
             </button>
           </a>
         </div>
