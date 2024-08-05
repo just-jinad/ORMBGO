@@ -110,14 +110,18 @@ export function Navbar() {
         <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5 lg:hidden">
           <div className="flex flex-col items-center gap-4">
             <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
+              <Link href={"/contact"}>
               Contact Us
+              
+              </Link>
             </button>
-            <a href="https://www.material-tailwind.com/blocks" target="_blank">
+            <Link href={"/"}>
+          
               <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
                 Give 💖
               </button>
-            </a>
          
+              </Link>
           </div>
         </div>
       )}
