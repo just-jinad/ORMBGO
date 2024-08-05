@@ -78,7 +78,7 @@ export function Navbar() {
           <button
             className={`text-sm font-medium ${
               isScrolling ? "text-gray-800" : "text-white"
-            } hover:text-gray-600`}
+            } hover:text-green-600`}
           >
             Contact Us
           </button>
@@ -87,7 +87,7 @@ export function Navbar() {
             <button
               className={`text-sm font-medium ${
                 isScrolling ? "text-gray-800" : "text-white"
-              } hover:text-gray-600`}
+              } hover:text-green-600`}
             >
               Give 💖
             </button>
