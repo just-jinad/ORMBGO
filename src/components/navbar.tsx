@@ -80,7 +80,7 @@ export function Navbar() {
               isScrolling ? "text-gray-800" : "text-white"
             } hover:text-green-600`}
           >
-            GIP
+            GPIA
           </button>
           </Link>
 
@@ -124,7 +124,7 @@ export function Navbar() {
           <div className="flex flex-col items-center gap-4">
             <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
               <Link href={"/gip"}>
-              GIP
+              GPIA
               </Link>
             </button>
 
