@@ -221,27 +221,15 @@ export default function Home() {
                 >
                   <i className="fab fa-facebook-square"></i>
                 </button>
-                <button
-                  className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <i className="fab fa-dribbble"></i>
-                </button>
-                <button
-                  className="bg-white text-gray-900 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                  type="button"
-                >
-                  <i className="fab fa-github"></i>
-                </button>
               </div>
             </div>
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex flex-wrap items-top mb-6">
                 <div className="w-full lg:w-4/12 px-4 ml-auto">
                   <ul className="list-unstyled">
-                    <li>
+                    <li className="mb-2">
                       <Link
-                        className=" bg-green-600 rounded-xl p-2 text-white "
+                        className=" bg-green-600 rounded-xl  p-2 text-white "
                         href={"/"}
                       >
                         Donate
