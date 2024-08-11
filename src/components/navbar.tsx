@@ -74,6 +74,16 @@ export function Navbar() {
         </h1>
 
         <div className="hidden items-center gap-4 lg:flex">
+          <Link href={"/gip"}>
+          <button
+            className={`text-sm font-medium ${
+              isScrolling ? "text-gray-800" : "text-white"
+            } hover:text-green-600`}
+          >
+            GIP
+          </button>
+          </Link>
+
           <Link href={"/contact"}>
           <button
             className={`text-sm font-medium ${
@@ -113,17 +123,21 @@ export function Navbar() {
         <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5 lg:hidden">
           <div className="flex flex-col items-center gap-4">
             <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
-              <Link href={"/contact"}>
-              Contact Us
-              
+              <Link href={"/gip"}>
+              GIP
               </Link>
             </button>
+
+            <Link href={"/contact"}>
+              <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
+              Contact Us
+              </button>
+              </Link>
+
             <Link href={"/"}>
-          
               <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
                 Give 💖
               </button>
-         
               </Link>
           </div>
         </div>
