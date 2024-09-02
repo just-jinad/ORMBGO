@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export function SponsoredBy() {
   return (
@@ -41,9 +42,12 @@ export function SponsoredBy() {
               Senior Citizens as well as the community at large. We have
               developed highly energetic and
               <br />
-              <button className="mt-2 w-full font-bold text-xl bg-green-500 hover:bg-pink-900 hover:text-white border hover:border-gray-300 text-white shadow-lg px-4 py-2 rounded-lg">
+              
+            <Link href={"/https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y"}>
+              <button className="button22 mt-2 w-full font-bold text-xl bg-green-500 hover:bg-pink-900 hover:text-white border hover:border-gray-300 text-white shadow-lg px-4 py-2 rounded-lg">
                 Give 
-              </button>
+              </button> 
+              </Link>
             </p>
           </div>
           <div className="w-full lg:w-1/2 flex flex-col items-center">
@@ -54,7 +58,7 @@ export function SponsoredBy() {
               alt="Rev. Eula"
               className="rounded-full mb-4 lg:mb-0"
             />
-            <h5 className="text-xl md:text-2xl font-semibold mb-2">Rev. Eula</h5>
+            <h5 className="text-xl md:text-2xl font-semibold mb-2">Rev. Eula Pennerman</h5>
             <p className="italic mb-4 text-sm md:text-base lg:text-lg">Founder, ORMBGO</p>
             <p className="italic text-sm md:text-base lg:text-lg">
               "To everyone who lives within a community I say this, Don't
