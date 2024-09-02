@@ -69,7 +69,6 @@ export function Navbar() {
         >
           <Link href={"/"}>
           ORMBGO
-          
           </Link>
         </h1>
 
@@ -91,6 +90,16 @@ export function Navbar() {
             } hover:text-green-600`}
           >
             Contact Us
+          </button>
+          </Link>
+
+          <Link href={"/contact"}>
+          <button
+            className={`text-sm font-medium ${
+              isScrolling ? "text-gray-800" : "text-white"
+            } hover:text-green-600`}
+          >
+            About Us
           </button>
           </Link>
           
@@ -134,10 +143,22 @@ export function Navbar() {
               </button>
               </Link>
 
-            <Link href={"/"}>
+              <Link href={"/contact"}>
+          <button
+            className={`text-sm font-medium ${
+              isScrolling ? "text-gray-800" : "text-white"
+            } hover:text-green-600`}
+          >
+            About Us
+          </button>
+          </Link>
+
+            <Link href={"/https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y"}>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y">
               <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
                 Give 💖
               </button>
+            </a>
               </Link>
           </div>
         </div>

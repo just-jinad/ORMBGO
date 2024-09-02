@@ -1,7 +1,45 @@
+import { useEffect, useState } from "react";
+
+
 const CURRENT_YEAR = new Date().getFullYear();
 const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
 
 export function Footer() {
+  const [bibleVerse, setBibleVerse] = useState({
+    verse: "",
+    book: "",
+    chapter: "",
+  });
+
+  
+  // Fetch the Bible verse when the component mounts
+  useEffect(() => {
+    const fetchBibleVerse = async () => {
+      try {
+        const response = await fetch("http://quotes.rest/bible/vod.json?api_key=bZ6VPUHgYLrrsSpjl4D6O10W6W6tOwpqiWxhsGCv", {
+          method: "GET",
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+  
+        const data = await response.json();
+        const verseData = data.contents;
+        setBibleVerse({
+          verse: verseData.verse,
+          book: verseData.book,
+          chapter: verseData.chapter,
+        });
+      } catch (error) {
+        console.error("Error fetching Bible verse:", error);
+      }
+    };
+  
+    fetchBibleVerse();
+  }, []);
+  
+
   return (
     <footer className="pb-5 p-10 md:pt-10">
       <div className="container flex flex-col mx-auto">
@@ -10,11 +48,11 @@ export function Footer() {
             Daily Bible Verse
           </h2>
           <p className="md:w-7/12 text-center my-3 text-base text-white">
-            Those whom I love I rebuke and discipline. So be earnest and repent.
+            {bibleVerse.verse || "Loading..."}
           </p>
           <div className="flex w-full md:w-fit gap-3 mt-2 flex-col md:flex-row">
             <button className="bg-white text-gray-900 py-2 px-4 rounded-md">
-              Revelation 3:19
+              {bibleVerse.book} {bibleVerse.chapter}
             </button>
           </div>
         </div>
@@ -27,7 +65,7 @@ export function Footer() {
             ORMBGO 
           </a>
           <ul className="flex justify-center my-4 md:my-0 w-max mx-auto items-center gap-4">
-          PO Box 821 Boca Raton, <br /> FL 33429 561-668-3925
+            PO Box 821 Boca Raton, <br /> FL 33429 561-668-3925
           </ul>
           <div className="flex w-fit justify-center gap-2">
             <a
@@ -61,10 +99,17 @@ export function Footer() {
           </div>
         </div>
         <p className="text-center mt-12 font-normal text-gray-700">
-          Copyright © 2024 ORMBGO (One Root Many Branches Global Outreach, Inc.)
+          Copyright © {CURRENT_YEAR} ORMBGO (One Root Many Branches Global Outreach, Inc.)
           | All Rights Reserved.
         </p>
       </div>
+
+      {/* <span  >
+      <img src="https://theysaidso.com/branding/theysaidso.png" height="20" width="20" alt="theysaidso.com"/>
+      <a href="https://theysaidso.com" title="Powered by bible verses from theysaidso.com">
+        They Said So®
+      </a>
+</span> */}
     </footer>
   );
 }
