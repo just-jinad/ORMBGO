@@ -95,3 +95,55 @@
       background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
 }
+
+
+
+
+
+.button19 {
+  width: 160px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid #0c0c0c;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+}
+.button19::after,
+.button19::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: 0.5s ease-out;
+  background-color: #0c0c0c;
+}
+.button19::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+.button19:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+.button19:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+.button19:hover {
+  color: #fff;
+}
+.button19:active {
+  filter: brightness(0.7);
+  transform: scale(0.98);
+}

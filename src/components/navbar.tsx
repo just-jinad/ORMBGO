@@ -27,7 +27,6 @@ function NavItem({ children, href }: NavItemProps) {
   );
 }
 
-
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
   const [isScrolling, setIsScrolling] = React.useState(false);
@@ -67,53 +66,49 @@ export function Navbar() {
             isScrolling ? "text-green-800" : "text-white"
           }`}
         >
-          <Link href={"/"}>
-          ORMBGO
-          </Link>
+          <Link href={"/"}>ORMBGO</Link>
         </h1>
 
         <div className="hidden items-center gap-4 lg:flex">
           <Link href={"/gip"}>
-          <button
-            className={`text-sm font-medium ${
-              isScrolling ? "text-gray-800" : "text-white"
-            } hover:text-green-600`}
-          >
-            GPIA
-          </button>
-          </Link>
-
-          <Link href={"/contact"}>
-          <button
-            className={`text-sm font-medium ${
-              isScrolling ? "text-gray-800" : "text-white"
-            } hover:text-green-600`}
-          >
-            Contact Us
-          </button>
-          </Link>
-
-          <Link href={"/contact"}>
-          <button
-            className={`text-sm font-medium ${
-              isScrolling ? "text-gray-800" : "text-white"
-            } hover:text-green-600`}
-          >
-            About Us
-          </button>
-          </Link>
-          
             <button
               className={`text-sm font-medium ${
                 isScrolling ? "text-gray-800" : "text-white"
               } hover:text-green-600`}
             >
-              <Link href={"/"}>
-             
-              Give 💖
-              </Link>
+              GPIA
             </button>
-      
+          </Link>
+
+          <Link href={"/contact"}>
+            <button
+              className={`text-sm font-medium ${
+                isScrolling ? "text-gray-800" : "text-white"
+              } hover:text-green-600`}
+            >
+              Contact Us
+            </button>
+          </Link>
+
+          <Link href={"/about"}>
+            <button
+              className={`text-sm font-medium ${
+                isScrolling ? "text-gray-800" : "text-white"
+              } hover:text-green-600`}
+            >
+              About Us
+            </button>
+          </Link>
+
+          <button
+            className={`text-sm font-medium ${
+              isScrolling ? "text-gray-800" : "text-white"
+            } hover:text-green-600`}
+          >
+            <a href="https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y">
+              Give 💖
+            </a>
+          </button>
         </div>
         <button
           onClick={handleOpen}
@@ -132,34 +127,30 @@ export function Navbar() {
         <div className="container mx-auto mt-4 rounded-lg bg-white px-6 py-5 lg:hidden">
           <div className="flex flex-col items-center gap-4">
             <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
-              <Link href={"/gip"}>
-              GPIA
-              </Link>
+              <Link href={"/gip"}>GPIA</Link>
             </button>
 
             <Link href={"/contact"}>
               <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
-              Contact Us
+                Contact Us
               </button>
-              </Link>
+            </Link>
 
-              <Link href={"/contact"}>
-          <button
-            className={`text-sm font-medium ${
-              isScrolling ? "text-gray-800" : "text-white"
-            } hover:text-green-600`}
-          >
-            About Us
-          </button>
-          </Link>
+            <Link href={"/about"}>
+              <button
+                className={`text-sm font-medium ${
+                  isScrolling ? "text-gray-800" : "text-white"
+                } hover:text-green-600`}
+              >
+                About Us
+              </button>
+            </Link>
 
-            <Link href={"/https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y"}>
-            <a href="https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y">
+            <a href="/https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y">
               <button className="text-sm font-medium text-gray-800 hover:text-gray-600">
                 Give 💖
               </button>
             </a>
-              </Link>
           </div>
         </div>
       )}
