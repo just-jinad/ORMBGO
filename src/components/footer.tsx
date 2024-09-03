@@ -14,29 +14,29 @@ export function Footer() {
   
   // Fetch the Bible verse when the component mounts
   useEffect(() => {
-    const fetchBibleVerse = async () => {
-      try {
-        const response = await fetch("http://quotes.rest/bible/vod.json?api_key=bZ6VPUHgYLrrsSpjl4D6O10W6W6tOwpqiWxhsGCv", {
-          method: "GET",
-        });
+    // const fetchBibleVerse = async () => {
+    //   try {
+    //     const response = await fetch("http://quotes.rest/bible/vod.json?api_key=bZ6VPUHgYLrrsSpjl4D6O10W6W6tOwpqiWxhsGCv", {
+    //       method: "GET",
+    //     });
   
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+    //     if (!response.ok) {
+    //       throw new Error(`HTTP error! status: ${response.status}`);
+    //     }
   
-        const data = await response.json();
-        const verseData = data.contents;
-        setBibleVerse({
-          verse: verseData.verse,
-          book: verseData.book,
-          chapter: verseData.chapter,
-        });
-      } catch (error) {
-        console.error("Error fetching Bible verse:", error);
-      }
-    };
+    //     const data = await response.json();
+    //     const verseData = data.contents;
+    //     setBibleVerse({
+    //       verse: verseData.verse,
+    //       book: verseData.book,
+    //       chapter: verseData.chapter,
+    //     });
+    //   } catch (error) {
+    //     console.error("Error fetching Bible verse:", error);
+    //   }
+    // };
   
-    fetchBibleVerse();
+    // fetchBibleVerse();
   }, []);
   
 
@@ -52,7 +52,7 @@ export function Footer() {
           </p>
           <div className="flex w-full md:w-fit gap-3 mt-2 flex-col md:flex-row">
             <button className="bg-white text-gray-900 py-2 px-4 rounded-md">
-              {bibleVerse.book} {bibleVerse.chapter}
+              {/* {bibleVerse.book} {bibleVerse.chapter} */}
             </button>
           </div>
         </div>
