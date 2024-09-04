@@ -43,7 +43,7 @@ export function SponsoredBy() {
               developed highly energetic and
               <br />
               
-            <Link href={"/https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y"}>
+            <Link href={"https://www.paypal.com/donate/?hosted_button_id=YSNTPLW36DV3Y"}>
               <button className="button22 mt-2 w-full font-bold text-xl bg-green-500 hover:bg-pink-900 hover:text-white border hover:border-gray-300 text-white shadow-lg px-4 py-2 rounded-lg">
                 Give 
               </button> 
