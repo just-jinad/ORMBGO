@@ -58,7 +58,7 @@ export function EventContent() {
 
   return (
     <section className="py-8 px-8 lg:py-20">
-      <div className="mx-auto container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="mx-auto container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-duration="1000">
         {EVENT_CONTENT.map((props, idx) => (
           <EventContentCard key={idx} {...props} />
         ))}
