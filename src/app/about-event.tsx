@@ -1,13 +1,22 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules"; // Correct import for modules
 
-// Array of image data
-const carouselItems = [
+// Interface for the gallery items
+interface GalleryItem {
+  src: string;
+  alt: string;
+  title: string;
+  description?: string;
+}
+
+// Array of image data with explicit typing
+const galleryItems: GalleryItem[] = [
   {
     src: "https://static.wixstatic.com/media/e0c18a_5949decb5c7b417687f66e63c9efebe0~mv2.png/v1/fit/w_1080,h_1505,q_90/e0c18a_5949decb5c7b417687f66e63c9efebe0~mv2.png",
     alt: "Image 1",
@@ -31,12 +40,22 @@ const carouselItems = [
 ];
 
 export function AboutEvent() {
+  const router = useRouter();
+
+  // Handle navigation when an image or gallery button is clicked
+  const handleGalleryNavigation = (index?: number) => {
+    if (typeof index === "number") {
+      // Route to gallery page with the selected image index
+      router.push(`/gallery?imageIndex=${index}`);
+    } else {
+      // Just route to the gallery page if no specific image was clicked
+      router.push("/gallery");
+    }
+  };
+
   return (
     <section className="container mx-auto flex flex-col items-center px-4 py-10">
-      <h6
-        className="text-center mb-2 text-orange-600 font-bold text-3xl"
-        style={{ fontFamily: "inherit" }}
-      >
+      <h6 className="text-center mb-2 text-orange-600 font-bold text-3xl" style={{ fontFamily: "inherit" }}>
         MAKING LIFE WORTH LIVING
       </h6>
       <h3 className="text-center text-blue-gray-900 text-xl">Showing Care</h3>
@@ -49,7 +68,7 @@ export function AboutEvent() {
       </p>
 
       <Swiper
-        className="rounded-xl w-full max-w-4xl "
+        className="rounded-xl w-full max-w-4xl"
         spaceBetween={30}
         autoplay={{ delay: 3000 }}
         pagination={{ clickable: true }}
@@ -57,9 +76,12 @@ export function AboutEvent() {
         loop
         modules={[Autoplay, Pagination, Navigation]}
       >
-        {carouselItems.map((item, index) => (
+        {galleryItems.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full">
+            <div
+              className="relative w-full cursor-pointer"
+              onClick={() => handleGalleryNavigation(index)}
+            >
               <img
                 src={item.src}
                 alt={item.alt}
@@ -70,15 +92,15 @@ export function AboutEvent() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className=" w-full flex justify-center items-center ">
+      <div className="w-full flex justify-center items-center">
         <div className="w-3/4 md:w-2/4 text-center p-4">
           <div className="flex justify-center gap-2">
-            <button className="button19 px-6 py-2 bg-white text-black rounded-lg text-lg">
+            <button
+              className="button19 px-6 py-2 bg-white text-black rounded-lg text-lg"
+              onClick={() => handleGalleryNavigation()}
+            >
               Gallery
             </button>
-            {/* <button className="px-6 py-2 bg-transparent text-black border border-black rounded-lg text-lg">
-                      Gallery
-                    </button> */}
           </div>
         </div>
       </div>
