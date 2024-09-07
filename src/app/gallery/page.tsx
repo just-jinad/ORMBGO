@@ -63,7 +63,7 @@ export default function Gallery() {
                 src={item.src}
                 alt={item.alt}
                 className="w-full object-cover"
-                style={{ height: "60vh" }}
+                style={{ height: "70vh" }}
               />
             </div>
             <h3 className="text-center mt-4">{item.title}</h3>
