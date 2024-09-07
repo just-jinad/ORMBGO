@@ -7,13 +7,13 @@ export function SponsoredBy() {
   return (
     <section className="py-8 px-4 md:px-8 lg:py-20 text-white">
       <div className="container mx-auto text-center"  >
-        <h6 className="text-blue-gray-900 mb-8 text-lg font-medium">
+        <h6 className="text-xl text-gray-700 md:text-2xl font-semibold mb-4">
           WHO WE ARE
         </h6>
         <div className="flex flex-col lg:flex-row items-start justify-center gap-6 mt-8 text-black rounded-lg p-6 bg-white">
           <div className="w-full lg:w-1/2 text-left">
-            <h5 className="text-xl md:text-2xl font-semibold mb-4">WHO WE ARE</h5>
-            <p className="mb-4 text-sm md:text-base lg:text-lg" data-aos="fade-up" data-aos-duration="1000">
+            {/* <h5 className="text-xl md:text-2xl font-semibold mb-4">WHO WE ARE</h5> */}
+            <p className="mb-4 text-sm md:text-base" data-aos="fade-up" data-aos-duration="1000">
               One Root Many Branches Global Outreach, or ORMBGO, is a non-profit
               community service organization headquartered in Boca Raton,
               Florida, USA. Our primary aim is to raise awareness in local
@@ -22,21 +22,21 @@ export function SponsoredBy() {
               internment in nursing homes, rehab facilities, or isolated at
               home.
             </p>
-            <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR MISSION:</h5>
-            <p className="mb-4 text-sm md:text-base lg:text-lg" data-aos="fade-up" data-aos-duration="1000">
+            <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR MISSION</h5>
+            <p className="mb-4 text-sm md:text-base " data-aos="fade-up" data-aos-duration="1000">
               We connect senior citizens who reside in nursing homes with the
               local community and help reduce the impact of loneliness through
               weekly interactive programs and special events.
             </p>
-            <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR VISION:</h5>
-            <p className="mb-4 text-sm md:text-base lg:text-lg" data-aos="fade-up" data-aos-duration="1000">
+            <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR VISION</h5>
+            <p className="mb-4 text-sm md:text-base" data-aos="fade-up" data-aos-duration="1000">
               To bring our program to every nursing home and rehabilitation
               facility in Boca Raton, then expand into all 50 states, the
               Caribbean Islands, and ultimately take our mission worldwide, one
               country at a time.
             </p>
-            <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR TEAM:</h5>
-            <p className="mb-4 text-sm md:text-base lg:text-lg" data-aos="fade-up" data-aos-duration="1000">
+            <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR TEAM</h5>
+            <p className="mb-4 text-sm md:text-base " data-aos="fade-up" data-aos-duration="1000">
               Our team of talented and dedicated volunteers utilize their
               talents and abilities to bring love and cheer to our precious
               Senior Citizens as well as the community at large. We have
@@ -60,7 +60,7 @@ export function SponsoredBy() {
             />
             <h5 className="text-xl md:text-2xl font-semibold mb-2">Rev. Eula Pennerman</h5>
             <p className="italic mb-4 text-sm md:text-base lg:text-lg">Founder, ORMBGO</p>
-            <p className="italic text-sm md:text-base lg:text-lg">
+            <p className="italic text-sm md:text-base">
               "To everyone who lives within a community I say this, Don't
               postpone joy! One Root Many Branches Global Outreach, Inc.
               strives to uplift the human spirit and make Life Worth Living!"
