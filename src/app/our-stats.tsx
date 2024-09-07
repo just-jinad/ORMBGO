@@ -32,7 +32,7 @@ export function OurStats() {
       {/* Header section */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold leading-tight text-orange-500">
-          STORIES (coming soon)
+          OUR BLOGS (coming soon)
         </h1>
         <p className="mt-3 text-gray-500">
           Here we will be sharing heartwarming stories and inspiring experiences
