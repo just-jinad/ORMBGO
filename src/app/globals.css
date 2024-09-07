@@ -108,7 +108,7 @@
   text-align: center;
   background-color: transparent;
   border-radius: 10px;
-  border: 1px solid #0c0c0c;
+  border: 1px solid #4caf50;
   transition: 0.5s;
   position: relative;
   overflow: hidden;
@@ -127,7 +127,7 @@
   left: 25%;
   z-index: -1;
   transition: 0.5s ease-out;
-  background-color: #0c0c0c;
+  background-color: #4caf50;
 }
 .button19::before {
   top: -50%;

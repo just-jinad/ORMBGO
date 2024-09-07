@@ -96,7 +96,7 @@ export function AboutEvent() {
         <div className="w-3/4 md:w-2/4 text-center p-4">
           <div className="flex justify-center gap-2">
             <button
-              className="button19 px-6 py-2 bg-white text-black rounded-lg text-lg"
+              className="button19 px-6 py-2 bg-white  text-green-900 rounded-lg text-lg"
               onClick={() => handleGalleryNavigation()}
             >
               Gallery
