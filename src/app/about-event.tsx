@@ -5,7 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Navigation, Pagination } from "swiper/modules"; // Correct import for modules
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Oval } from "react-loader-spinner"; // Import fancy loader
 
 // Interface for the gallery items
 interface GalleryItem {
@@ -41,25 +42,31 @@ const galleryItems: GalleryItem[] = [
 
 export function AboutEvent() {
   const router = useRouter();
+  const [loading, setLoading] = useState(false); // State for managing the loader
 
   // Handle navigation when an image or gallery button is clicked
   const handleGalleryNavigation = (index?: number) => {
-    if (typeof index === "number") {
-      // Route to gallery page with the selected image index
-      router.push(`/gallery?imageIndex=${index}`);
-    } else {
-      // Just route to the gallery page if no specific image was clicked
-      router.push("/gallery");
-    }
+    setLoading(true); // Show loader
+
+    setTimeout(() => {
+      if (typeof index === "number") {
+        router.push(`/gallery?imageIndex=${index}`);
+      } else {
+        router.push("/gallery");
+      }
+    }, 2000); // Simulate 2 seconds of loading time
   };
 
   return (
     <section className="container mx-auto flex flex-col items-center px-4 py-10">
-      <h6 className="text-center mb-2 text-orange-600 font-bold text-3xl" style={{ fontFamily: "inherit" }}>
+      <h6
+        className="text-center mb-2 text-orange-600 font-bold text-3xl"
+        style={{ fontFamily: "inherit" }}
+      >
         MAKING LIFE WORTH LIVING
       </h6>
       <h3 className="text-center text-blue-gray-900 text-xl">Showing Care</h3>
-      <p className="mt-2 lg:max-w-4xl mb-8 w-full text-center font-normal  text-gray-500">
+      <p className="mt-2 lg:max-w-4xl mb-8 w-full text-center font-normal text-gray-500">
         Whether you’re a dedicated volunteer, a generous donor, or someone
         looking to make a difference, our organization is committed to raising
         awareness and providing support to individuals isolated from their
@@ -67,43 +74,64 @@ export function AboutEvent() {
         those in nursing homes, rehab facilities, and isolated at home.
       </p>
 
-      <Swiper
-        className="rounded-xl w-full max-w-4xl"
-        spaceBetween={30}
-        autoplay={{ delay: 3000 }}
-        pagination={{ clickable: true }}
-        navigation
-        loop
-        modules={[Autoplay, Pagination, Navigation]}
-      >
-        {galleryItems.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="relative w-full cursor-pointer"
-              onClick={() => handleGalleryNavigation(index)}
-            >
-              <img
-                src={item.src}
-                alt={item.alt}
-                className="w-full object-cover"
-                style={{ height: "60vh" }}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div className="w-full flex justify-center items-center">
-        <div className="w-3/4 md:w-2/4 text-center p-4">
-          <div className="flex justify-center gap-2">
-            <button
-              className="button19 px-6 py-2 bg-white  text-green-900 rounded-lg text-lg"
-              onClick={() => handleGalleryNavigation()}
-            >
-              Gallery
-            </button>
-          </div>
+      {loading ? (
+        <div className="flex justify-center items-center h-60 w-full">
+          {/* Fancy Loader */}
+          <Oval
+            height={80}
+            width={80}
+            color="#4fa94d"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            ariaLabel="oval-loading"
+            secondaryColor="#4fa94d"
+            strokeWidth={2}
+            strokeWidthSecondary={2}
+          />
         </div>
-      </div>
+      ) : (
+        <>
+          <Swiper
+            className="rounded-xl w-full max-w-4xl"
+            spaceBetween={30}
+            autoplay={{ delay: 3000 }}
+            pagination={{ clickable: true }}
+            navigation
+            loop
+            modules={[Autoplay, Pagination, Navigation]}
+          >
+            {galleryItems.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className="relative w-full cursor-pointer"
+                  onClick={() => handleGalleryNavigation(index)}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full object-cover"
+                    style={{ height: "60vh" }}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <div className="w-full flex justify-center items-center">
+            <div className="w-3/4 md:w-2/4 text-center p-4">
+              <div className="flex justify-center gap-2">
+                <button
+                  className="button19 px-6 py-2 bg-white text-green-900 rounded-lg text-lg"
+                  onClick={() => handleGalleryNavigation()}
+                >
+                  Gallery
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </section>
   );
 }
