@@ -39,7 +39,7 @@ const galleryItems: GalleryItem[] = [
 
 export default function Gallery() {
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const searchParams = useSearchParams();
   const imageIndex = searchParams.get("imageIndex"); // Get the index of the clicked image from URL
 
@@ -47,12 +47,15 @@ export default function Gallery() {
   const startIndex = imageIndex ? parseInt(imageIndex) : 0;
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(true)
+ const timer =   setTimeout(() => {
+      setLoading(false)
     }, 3000);
     
+
+    return ()=> clearTimeout(timer)
   }, [])
   
+
 
   return (
 <>
