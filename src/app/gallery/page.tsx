@@ -1,12 +1,12 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation"; // Correct import for Next.js 13+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-
+import { Hearts } from "react-loader-spinner";
 interface GalleryItem {
   src: string;
   alt: string;
@@ -38,39 +38,70 @@ const galleryItems: GalleryItem[] = [
 ];
 
 export default function Gallery() {
+
+  const [loading, setLoading] = useState(false)
   const searchParams = useSearchParams();
   const imageIndex = searchParams.get("imageIndex"); // Get the index of the clicked image from URL
 
   // Fallback to first image if index is not provided
   const startIndex = imageIndex ? parseInt(imageIndex) : 0;
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true)
+    }, 3000);
+    
+  }, [])
+  
+
   return (
-    <section className="container mx-auto py-10 px-4">
-      <h3 className="text-center text-2xl font-bold mb-8">Gallery</h3>
-      <Swiper
-        className="rounded-xl w-full max-w-4xl mx-auto"
-        spaceBetween={30}
-        pagination={{ clickable: true }}
-        navigation
-        loop
-        initialSlide={startIndex} // Start with the clicked image
-        modules={[Pagination, Navigation]}
-      >
-        {galleryItems.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full">
-              <img
-                src={item.src}
-                alt={item.alt}
-                className="w-full object-cover"
-                style={{ height: "70vh" }}
-              />
-            </div>
-            <h3 className="text-center mt-4">{item.title}</h3>
-            <p className="text-center text-gray-600">{item.description}</p>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </section>
+<>
+    {loading ? (
+        <div className="flex justify-center items-center h-60 w-full">
+        {/* Fancy Loader */}
+        
+        <Hearts
+          height="80"
+          width="80"
+          color="#4fa94d"
+          ariaLabel="hearts-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />
+        
+      </div>
+      ) : (
+        <section className="container mx-auto py-10 px-4">
+        <h3 className="text-center text-2xl font-bold mb-8">Gallery</h3>
+        <Swiper
+          className="rounded-xl w-full max-w-4xl mx-auto"
+          spaceBetween={30}
+          pagination={{ clickable: true }}
+          navigation
+          loop
+          initialSlide={startIndex} // Start with the clicked image
+          modules={[Pagination, Navigation]}
+        >
+          {galleryItems.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative w-full">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full object-cover"
+                  style={{ height: "70vh" }}
+                />
+              </div>
+              <h3 className="text-center mt-4">{item.title}</h3>
+              <p className="text-center text-gray-600">{item.description}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+      )
+    }
+    
+    </>
   );
 }
