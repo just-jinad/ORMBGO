@@ -1,10 +1,12 @@
-import React, { ReactElement } from "react"; // Importing React and ReactElement
+"use client"
+import React, { ReactElement } from "react"; 
 import "./globals.css";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import { Layout, FixedPlugin } from "@/components"; // Importing Layout as a named export
-import { ThemeProvider } from "../components/material-tailwind";
-import AOSWrapper from '../components/AOSWrapper'; // Import the AOSWrapper
+import { Layout, FixedPlugin } from "@/components"; 
+import AOSWrapper from '../components/AOSWrapper'; 
+import { Provider } from "react-redux";
+import store from "../store"
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -12,10 +14,10 @@ const roboto = Roboto({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Ormbgo",
-  description: "one branch many roots org",
-};
+// export const metadata: Metadata = {
+//   title: "Ormbgo",
+//   description: "one branch many roots org",
+// };
 
 export default function RootLayout({
   children,
@@ -36,8 +38,10 @@ export default function RootLayout({
         <AOSWrapper> {/* Wrapping with AOSWrapper */}
           <Layout>
             <>
+            <Provider store={store}>
               {children}
               <FixedPlugin />
+              </Provider>
             </>
           </Layout>
         </AOSWrapper> 
