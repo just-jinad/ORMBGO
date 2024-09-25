@@ -14,7 +14,7 @@ interface GalleryItem {
   description?: string;
 }
 
-// Example data (you would likely import this or fetch it)
+
 const galleryItems: GalleryItem[] = [
   {
     src: "https://static.wixstatic.com/media/e0c18a_5949decb5c7b417687f66e63c9efebe0~mv2.png/v1/fit/w_1080,h_1505,q_90/e0c18a_5949decb5c7b417687f66e63c9efebe0~mv2.png",
@@ -34,16 +34,16 @@ const galleryItems: GalleryItem[] = [
     title: "Talent",
     description: "One of our wonderful volunteers using her gifts to bless others.",
   },
-  // Add more images here
+
 ];
 
 export default function Gallery() {
 
   const [loading, setLoading] = useState(true)
   const searchParams = useSearchParams();
-  const imageIndex = searchParams.get("imageIndex"); // Get the index of the clicked image from URL
+  const imageIndex = searchParams.get("imageIndex"); 
 
-  // Fallback to first image if index is not provided
+  
   const startIndex = imageIndex ? parseInt(imageIndex) : 0;
 
   useEffect(() => {
