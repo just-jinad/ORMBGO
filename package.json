@@ -22,6 +22,7 @@
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "iconify-icon": "^2.1.0",
+    "mongoose": "^8.6.3",
     "next": "^13.5.6",
     "next-themes": "^0.3.0",
     "react": "18",

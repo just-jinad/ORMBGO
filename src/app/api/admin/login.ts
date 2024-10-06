@@ -1,34 +1,54 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import Admin from '../../models/Admin';
+import dbConnect from '../../../utils/dbConnect';
 
-// Mock admin data for illustration
-const admins = [
-  { username: 'superadmin', password: bcrypt.hashSync('supersecret', 10), role: 'SUPER_ADMIN' },
-  { username: 'subadmin', password: bcrypt.hashSync('subsecret', 10), role: 'SUB_ADMIN' },
-];
+const JWT_SECRET = process.env.JWT_SECRET as string;
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'POST') {
-    const { username, password } = req.body;
-    const admin = admins.find((admin) => admin.username === username);
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' });
+  }
 
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+    return res.status(400).json({ message: 'All fields are required' });
+  }
+
+  try {
+    await dbConnect();
+
+    // Check if admin exists
+    const admin = await Admin.findOne({ username });
     if (!admin) {
       return res.status(404).json({ message: 'Admin not found' });
     }
 
-    const isMatch = bcrypt.compareSync(password, admin.password);
+    // Check password
+    const isMatch = await bcrypt.compare(password, admin.password);
     if (!isMatch) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ username: admin.username, role: admin.role }, 'your_jwt_secret', {
-      expiresIn: '1h',
-    });
+    // Generate JWT token
+    const token = jwt.sign(
+      { id: admin._id, role: admin.role },
+      JWT_SECRET,
+      { expiresIn: '1h' }
+    );
 
-    res.status(200).json({ token, admin: { username: admin.username, role: admin.role } });
-  } else {
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    return res.status(200).json({
+      message: 'Login successful',
+      token,
+      admin: {
+        id: admin._id,
+        username: admin.username,
+        role: admin.role,
+      },
+    });
+  } catch (error) {
+    return res.status(500).json({ message: 'Internal server error' });
   }
 }

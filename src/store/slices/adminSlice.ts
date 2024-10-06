@@ -1,33 +1,53 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+// adminSlice.ts
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
+// Define the initial state of admin registration
 interface AdminState {
-  isAuthenticated: boolean;
-  role: 'SUPER_ADMIN' | 'SUB_ADMIN' | null;
-  username: string | null;
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
 }
 
 const initialState: AdminState = {
-  isAuthenticated: false,
-  role: null,
-  username: null,
+  status: 'idle',
+  error: null,
 };
+
+// Async action to register an admin
+export const registerAdmin = createAsyncThunk(
+  'admin/registerAdmin',
+  async (adminData: { username: string; password: string }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('/api/admin/signup', adminData);
+      return response.data;
+    } catch (error: any) {
+      console.log(error);
+      
+      // Reject the promise with the error message
+      return rejectWithValue(error.response?.data?.message || 'Something went wrong');
+    }
+  }
+);
 
 const adminSlice = createSlice({
   name: 'admin',
   initialState,
-  reducers: {
-    login: (state, action: PayloadAction<{ role: 'SUPER_ADMIN' | 'SUB_ADMIN'; username: string }>) => {
-      state.isAuthenticated = true;
-      state.role = action.payload.role;
-      state.username = action.payload.username;
-    },
-    logout: (state) => {
-      state.isAuthenticated = false;
-      state.role = null;
-      state.username = null;
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(registerAdmin.pending, (state) => {
+        state.status = 'loading';
+        state.error = null;
+      })
+      .addCase(registerAdmin.fulfilled, (state) => {
+        state.status = 'succeeded';
+        state.error = null;
+      })
+      .addCase(registerAdmin.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload as string;
+      });
   },
 });
 
-export const { login, logout } = adminSlice.actions;
 export default adminSlice.reducer;

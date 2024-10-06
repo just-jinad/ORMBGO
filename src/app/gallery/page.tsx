@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Hearts } from "react-loader-spinner";
+
 interface GalleryItem {
   src: string;
   alt: string;

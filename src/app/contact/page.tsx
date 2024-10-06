@@ -1,6 +1,7 @@
 import { Footer, Navbar } from "@/components";
 import React from "react";
 
+
 const Contact = () => {
   return (
     <>
