@@ -10,10 +10,10 @@ export function SponsoredBy() {
         <h6 className="text-xl text-gray-700 md:text-2xl font-semibold mb-4">
           WHO WE ARE
         </h6>
-        <div className="flex flex-col lg:flex-row items-start justify-center gap-6 mt-8 text-black rounded-lg p-6 bg-white">
+        <div className="flex flex-col lg:flex-row items-start justify-center gap-6 mt-8 text-black rounded-lg p-1  bg-white">
           <div className="w-full lg:w-1/2 text-left">
             {/* <h5 className="text-xl md:text-2xl font-semibold mb-4">WHO WE ARE</h5> */}
-            <p className="mb-4 text-sm md:text-base" data-aos="fade-up" data-aos-duration="1000">
+            <p className="mb-4 text-xl md:text-base" data-aos="fade-up" data-aos-duration="1000">
               One Root Many Branches Global Outreach, or ORMBGO, is a non-profit
               community service organization headquartered in Boca Raton,
               Florida, USA. Our primary aim is to raise awareness in local
