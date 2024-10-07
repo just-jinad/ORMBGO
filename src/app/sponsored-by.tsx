@@ -23,20 +23,20 @@ export function SponsoredBy() {
               home.
             </p>
             <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR MISSION</h5>
-            <p className="mb-4 text-sm md:text-base " data-aos="fade-up" data-aos-duration="1000">
+            <p className="mb-4 text-xl md:text-base " data-aos="fade-up" data-aos-duration="1000">
               We connect senior citizens who reside in nursing homes with the
               local community and help reduce the impact of loneliness through
               weekly interactive programs and special events.
             </p>
             <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR VISION</h5>
-            <p className="mb-4 text-sm md:text-base" data-aos="fade-up" data-aos-duration="1000">
+            <p className="mb-4 text-xl md:text-base" data-aos="fade-up" data-aos-duration="1000">
               To bring our program to every nursing home and rehabilitation
               facility in Boca Raton, then expand into all 50 states, the
               Caribbean Islands, and ultimately take our mission worldwide, one
               country at a time.
             </p>
             <h5 className="text-xl md:text-2xl font-semibold mb-2">OUR TEAM</h5>
-            <p className="mb-4 text-sm md:text-base " data-aos="fade-up" data-aos-duration="1000">
+            <p className="mb-4 text-xl md:text-base " data-aos="fade-up" data-aos-duration="1000">
               Our team of talented and dedicated volunteers utilize their
               talents and abilities to bring love and cheer to our precious
               Senior Citizens as well as the community at large. We have
@@ -60,7 +60,7 @@ export function SponsoredBy() {
             />
             <h5 className="text-xl md:text-2xl font-semibold mb-2">Rev. Eula Pennerman</h5>
             <p className="italic mb-4 text-sm md:text-base lg:text-lg">Founder, ORMBGO</p>
-            <p className="italic text-sm md:text-base">
+            <p className="italic text-xl md:text-base">
               "To everyone who lives within a community I say this, Don't
               postpone joy! One Root Many Branches Global Outreach, Inc.
               strives to uplift the human spirit and make Life Worth Living!"
