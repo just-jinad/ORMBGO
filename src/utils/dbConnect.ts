@@ -1,36 +1,19 @@
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ormbgo';
+dotenv.config();
 
-if (!MONGODB_URI) {
-  throw new Error('Please define the MONGODB_URI environment variable in .env.local');
-}
-
-let cached = (global as any).mongoose;
-
-if (!cached) {
-  cached = (global as any).mongoose = { conn: null, promise: null };
-}
+const MONGODB_URI = process.env.MONGODB_URI;
 
 async function dbConnect() {
-  if (cached.conn) {
-    return cached.conn;
-  }
-
-  if (!cached.promise) {
-    const opts = {
-      bufferCommands: false,
-    };
-
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      console.log("mongoose connected successfully");
-      return mongoose;
-    }).catch((error) => {
+  if (mongoose.connection.readyState === 0) {
+    try {
+      await mongoose.connect(MONGODB_URI as any);
+      console.log("MongoDB connected successfully");
+    } catch (error) {
       console.error('MongoDB connection error:', error);
-    });
+    }
   }
-  cached.conn = await cached.promise;
-  return cached.conn;
 }
 
 export default dbConnect;

@@ -22,6 +22,7 @@
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
     "iconify-icon": "^2.1.0",
     "mongodb": "^6.9.0",
     "mongoose": "^8.6.3",
