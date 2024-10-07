@@ -1,7 +1,7 @@
-import bcrypt from 'bcryptjs';
-import mongoose from 'mongoose';
-import Admin from './app/models/Admin';
-import dbConnect from './utils/dbConnect';
+const bcrypt = require('bcryptjs');
+const mongoose = require('mongoose');
+const Admin = require('./app/models/Admin');
+const dbConnect = require('./utils/dbConnect');
 
 async function seedAdmin() {
   await dbConnect();

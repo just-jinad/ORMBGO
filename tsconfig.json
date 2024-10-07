@@ -30,7 +30,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "src",
+    "src/**/*.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
