@@ -18,5 +18,20 @@ export default async function handler(req: NextApiRequest, res:NextApiResponse){
         if (mongoose.connection.readyState === 0) {
           await mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
         }
+        const {username, password} = req.body
+    
+        const adminUser = await Admin.findOne({username})
+        if(!adminUser){
+            return res.status(401).json({message: 'Invalid username or password'})
+        }
+    
+    
+        const matchedPassword = await bcrypt.compare(password, adminUser.password )
+        if(!matchedPassword){
+            return res.status(401).json({message:'Invalid username or password'})
+        }
+        return res.status(200).json({message:'Login Successful'})
     }
+        return res.status(405).json({message: 'Method not supported Allowed'})
+
 }
