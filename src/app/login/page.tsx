@@ -1,74 +1,48 @@
 "use client"
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useRouter } from "next/router";
-
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
 
 const page = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [isMounted, setIsMounted] = useState(false)
-//   let router = useRouter();
-  useEffect(()=>{
-    setIsMounted(true)
-  },[])
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const router = useRouter()
+  const [user, setUser] = useState({
+    username:'',
+    password:'',
+  })
+  
+  const handlelogin = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    console.log(user);
+    axios.post("api/user/login", user).then((data)=>{
+      console.log(data);
+      if (data) {
+        router.push("/dashboard");
 
-    try {
-      const res = await axios.post("/api/auth", { username, password });
-      if (res.status === 200) {
-        console.log("Login successful")
-        // router.push("/admin");
-      }else {
-        console.log(res)
+      }else{
+        alert("invalid user")
       }
-
-    } catch (err) {
-    console.log(err)
-      setError("Invalid username or password");
-    }
+    }).catch((err)=>{
+      console.log(err);
+    })
   };
-//   if (!isMounted) {
-//     return null;
-//   }
-
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-2xl font-bold mb-4">Admin Login</h2>
-        {error && <p className="text-red-500">{error}</p>}
-        <div className="mb-4">
-          <label className="block text-sm font-medium">Username</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded"
-            required
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium">Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded"
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-        >
-          Login
-        </button>
-      </form>
-    </div>
-  );
-};
+    <>
+   <div style={{backgroundImage:'url(https://i.pinimg.com/736x/7e/4c/17/7e4c17f402bcc3bc98d2de0792b4a171.jpg)', height:'100vh',}}>
+        <br />
+        <br />
+      <form style={{backdropFilter:"blur(100px)"}}  action="" className='w-50 p-3 mx-auto shadow-lg' onSubmit={handlelogin}>
+        <h5 className='text-center text-white fw-bold'>Login page</h5>
+      <br />
 
-export default page;
+      <input className='form-control border my-3' value={user.username} onChange={(e)=>setUser({...user, username: e.target.value})}  />
+      <br />
+
+      <input className='form-control border my-3' value={user.password} onChange={(e)=>setUser({...user, password: e.target.value})} type="password" placeholder='password' />
+      <button type='submit' className='bg-gray-700 fw-bold text-white p-2 rounded-lg w-100'>Submit</button>
+      </form>
+      </div>
+    </>
+  )
+}
+
+export default page
