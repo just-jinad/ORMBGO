@@ -16,40 +16,16 @@ const Page = () => {
       console.log(res)
       if(res.status == 200){
         alert("Login successful")
-      }else if(res.status == 401){
-        alert("wrong username or password")
+        // router.push("/dashboard")
       }
     }).catch((err)=>{
       console.log(err)
       if(err.status == 401){
-        alert("wrong username or password")
+        alert("Wrong username or password")
+      }else{
+        alert("Check Network")
       }
     })
-
-    // try {
-    //   const response = await axios.post("/api/user/login", user);
-    //   console.log(response.data);
-    //   if (response.status === 200) {
-    //     console.log("Login  successful")
-    //     // router.push("/dashboard");
-    //   } else if(response.status == 401) {
-    //     alert("Invalid username or password");
-    //   }
-    // } catch (error) {
-    //   if (error.response && error.response.status === 401) {
-    //     alert("Invalid username or password");
-    //   } else {
-    //     alert("Error during login");
-    //     console.log(error.response?.data || error.message);
-    //   }
-    //   // if(error.status == 401){
-    //   //   alert("Error during login");
-    //   let err = error
-    //   // }
-    //   console.log(err.status);
-    //   // console.log()
-    //   // alert("Error during login");
-    // }
   };
 
   return (
