@@ -1,5 +1,6 @@
 "use client"
 import axios from 'axios';
+import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
@@ -15,16 +16,18 @@ const Page = () => {
     .then((res)=>{
       console.log(res)
       if(res.status == 200){
-        alert("Login successful")
+        // alert("Login successful")
         console.log(res.data.token)
         let token = res.data.token
         localStorage.setItem('token', token)
-        router.push("/dashboard")
+        toast.success('Login successful');
+        // router.push("/dashboard")
       }
     }).catch((err)=>{
       console.log(err)
       if(err.status == 401){
-        alert("Wrong username or password")
+        // alert("Wrong username or password")
+        toast.error('Wrong username or password');
       }else{
         alert("Check Network")
       }

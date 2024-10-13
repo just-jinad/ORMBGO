@@ -1,5 +1,6 @@
 "use client"
 import React, { ReactElement } from "react"; 
+import {Toaster } from 'sonner'
 import "./globals.css";
 // import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -40,6 +41,7 @@ export default function RootLayout({
             <>
             <Provider store={store}>
               {children}
+              <Toaster />
               <FixedPlugin />
               </Provider>
             </>
