@@ -16,6 +16,9 @@ const Page = () => {
       console.log(res)
       if(res.status == 200){
         alert("Login successful")
+        console.log(res.data.token)
+        let token = res.data.token
+        localStorage.setItem('token', token)
         // router.push("/dashboard")
       }
     }).catch((err)=>{
