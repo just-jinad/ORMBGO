@@ -16,12 +16,12 @@ const Page = () => {
     .then((res)=>{
       console.log(res)
       if(res.status == 200){
-        // alert("Login successful")
+       
         console.log(res.data.token)
         let token = res.data.token
         localStorage.setItem('token', token)
         toast.success('Login successful');
-        // router.push("/dashboard")
+        router.push("/dashboard")
       }
     }).catch((err)=>{
       console.log(err)
@@ -29,7 +29,7 @@ const Page = () => {
         // alert("Wrong username or password")
         toast.error('Wrong username or password');
       }else{
-        alert("Check Network")
+        toast.error('Network Error!');
       }
     })
   };
