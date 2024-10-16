@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import Image from 'next/image'
 import { Hearts } from "react-loader-spinner"; // Import fancy loader
 
 // Interface for the gallery items
@@ -89,12 +90,15 @@ export function AboutEvent() {
                 className="relative w-full cursor-pointer"
                 onClick={() => handleGalleryNavigation(index)}
               >
-                <img
+                 <Image
+                  width={70}
+                  height={70}
+                  className="w-full object-cover"
                   src={item.src}
                   alt={item.alt}
-                  className="w-full object-cover"
-                  style={{ height: "60vh" }}
-                />
+                  >
+
+                  </Image>
               </div>
             </SwiperSlide>
           ))}
