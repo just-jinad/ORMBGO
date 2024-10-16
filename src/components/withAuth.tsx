@@ -21,16 +21,20 @@ const useAuth = () => {
 };
 
 const withAuth = (WrappedComponent: any) => {
-  return (props: any) => {
+  const AuthenticatedComponent = (props: any) => {
     const isAuthenticated = useAuth();
 
     if (!isAuthenticated) {
-      // While the check is ongoing or if unauthenticated, you can return null or a loader
-      return null;
+      return null; // Show a loader or return null while the auth check happens
     }
 
     return <WrappedComponent {...props} />;
   };
+
+  // Add display name for better debugging
+  AuthenticatedComponent.displayName = `WithAuth(${WrappedComponent.displayName || WrappedComponent.name || 'Component'})`;
+
+  return AuthenticatedComponent;
 };
 
 export default withAuth;
