@@ -6,7 +6,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import Image from 'next/image'
 import { Hearts } from "react-loader-spinner";
+
 
 interface GalleryItem {
   src: string;
@@ -97,12 +99,22 @@ export default function Gallery() {
                  style={{ height: "70vh" }}
                 /> */}
 
-                <img
+                  <Image
+                  width={70}
+                  height={70}
+                  className="w-full object-cover"
+                  src={item.src}
+                  alt={item.alt}
+                  >
+
+                  </Image>
+
+                {/* <img
                   src={item.src}
                   alt={item.alt}
                   className="w-full object-cover"
                   style={{ height: "70vh" }}
-                />
+                /> */}
               </div>
               <h3 className="text-center mt-4">{item.title}</h3>
               <p className="text-center text-gray-600">{item.description}</p>
