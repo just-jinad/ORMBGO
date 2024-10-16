@@ -90,6 +90,13 @@ export default function Gallery() {
           {galleryItems.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="relative w-full">
+                {/* <Image
+                 src={item.src}
+                 alt={item.alt}
+                 className="w-full object-cover"
+                 style={{ height: "70vh" }}
+                /> */}
+
                 <img
                   src={item.src}
                   alt={item.alt}
