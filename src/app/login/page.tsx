@@ -40,10 +40,10 @@ const Page = () => {
       </div>
 
      
-      <div className="flex flex-1 justify-center items-center w-full bg-white p-10">
+      <div className="flex flex-1 justify-center items-center w-full  p-10">
         <form
           onSubmit={handleLogin}
-          className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg"
+          className="w-full max-w-md  p-8 rounded-lg "
         >
           <h5 className="text-2xl font-semibold mb-6 text-gray-800 text-center">Login</h5>
           

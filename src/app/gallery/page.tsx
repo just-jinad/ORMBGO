@@ -92,12 +92,7 @@ export default function Gallery() {
           {galleryItems.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="relative w-full">
-                {/* <Image
-                 src={item.src}
-                 alt={item.alt}
-                 className="w-full object-cover"
-                 style={{ height: "70vh" }}
-                /> */}
+               
 
                   <Image
                   width={70}
@@ -109,12 +104,6 @@ export default function Gallery() {
 
                   </Image>
 
-                {/* <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full object-cover"
-                  style={{ height: "70vh" }}
-                /> */}
               </div>
               <h3 className="text-center mt-4">{item.title}</h3>
               <p className="text-center text-gray-600">{item.description}</p>
